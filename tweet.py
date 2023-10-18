@@ -5,8 +5,8 @@ user_tweet_count = len(user_input)
 
 if user_tweet_count <= max_tweets:
     print("***************************************************")
-    print(f"Your {user_tweet_count} character(s) tweet will work !!!!! .... still have {140-user_tweet_count} character(s)")
+    print(f"Your {user_tweet_count} character(s) tweet will work !!!!! .... still have {max_tweets-user_tweet_count} character(s) left !")
 
 if user_tweet_count > max_tweets:
     print("***************************************************")
-    print(f"Your {user_tweet_count} character(s) tweet is too long !!!!! ... more by {user_tweet_count-140} character(s)")
+    print(f"Your {user_tweet_count} character(s) tweet is too long !!!!! ... over by {user_tweet_count-max_tweets} character(s)")
