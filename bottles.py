@@ -15,3 +15,20 @@ for x in range(bottles, 0, -1):
 
 
 # try to do the above using WHILE loop again ............ tomorrow
+
+print("\n")
+print ("++++++++++++++++++++++++++++++++++++++++++++++")
+print ("now we are doing 200 bottles using while loop")
+
+bottles2 = 200
+
+while bottles2 > 0:
+    print(f"Take one down, pass it around.....There are {bottles2} bottles of beer remain on the wall")
+    
+    if bottles2 == 1:
+        print(f"Take one down, pass it around.....There are no more bottles of beer remain on the wall")
+    else:
+        print(
+            f"Take one down, pass it around.....There are now {bottles2} bottle(s) remain on the wall")
+    print("*" *50)
+    bottles2 -= 1
