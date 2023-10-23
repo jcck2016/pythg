@@ -29,6 +29,6 @@ while bottles2 > 0:
         print(f"Take one down, pass it around.....There are no more bottles of beer remain on the wall")
     else:
         print(
-            f"Take one down, pass it around.....There are now {bottles2} bottle(s) remain on the wall")
+            f"Take one down, pass it around.....There are now {bottles2-1} bottle(s) remain on the wall")
     print("*" *50)
     bottles2 -= 1
