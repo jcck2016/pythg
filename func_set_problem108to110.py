@@ -21,8 +21,22 @@ def count_vowels(words2):
     return vcount
 
 
+def divide2(x1=1, y1=4):
+    return x1/y1
+
+
+def greet(person, msg1="welcome", msg2="how are you", msg3="have a great day"):
+    print(f"Hi {person}..{msg1} ...{msg2}...{msg3} ... !!!")
+
+
 print(is_even(4566778))
 print(slugify(" i love YOU New YoRK    ! "))
 print(count_vowels("dsdeadtgtysregght"))
 print(slugify_predef_sep("hello world CkR  !   ! !!", "***"))
 print(slugify_predef_sep("hello world CkR  !   ! !!"))
+
+print(divide2())
+print(divide2(8))
+print(divide2(8, 3))
+
+print(greet("tony"))
