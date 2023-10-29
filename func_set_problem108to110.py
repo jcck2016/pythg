@@ -24,9 +24,18 @@ def count_vowels(words2):
 def divide2(x1=1, y1=4):
     return x1/y1
 
+# we can have as many as pre def parameters as we want but have to come AFTER the first required parameter when the function is called, video 110
+
 
 def greet(person, msg1="welcome", msg2="how are you", msg3="have a great day"):
     print(f"Hi {person}..{msg1} ...{msg2}...{msg3} ... !!!")
+
+# named argument parameter where the order of the parameter DOESNT MATTER !
+
+
+def get_total(price, qty=1, tax=0.09, discount=0):
+    subtotal = price * qty * (1 - discount)
+    return subtotal * (1 + tax)
 
 
 print(is_even(4566778))
@@ -35,8 +44,17 @@ print(count_vowels("dsdeadtgtysregght"))
 print(slugify_predef_sep("hello world CkR  !   ! !!", "***"))
 print(slugify_predef_sep("hello world CkR  !   ! !!"))
 
-print(divide2())
-print(divide2(8))
+
 print(divide2(8, 3))
 
+# video 110
 print(greet("tony"))
+
+
+# video 111
+print(get_total(9.75, 5, 0.01, 0.5))
+print(get_total(price=9.75, qty=5, tax=0.01, discount=0.5))
+print(get_total(price=9.75, tax=0.01, discount=0.5, qty=5))
+
+print(get_total(price=20.95))
+print(get_total(price=20.95, tax=0.09))
