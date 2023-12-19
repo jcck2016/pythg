@@ -13,6 +13,13 @@ def laugh_how(intensity):
     print("*" * 100)
 
 
+def laugh_how_default10(intensity=10):
+    print("*" * 100)
+    print("HeHeHeHe!!..." * intensity)
+    print("HaHahaHa!!..." * intensity)
+    print("*" * 100)
+
+
 def divide_me(numerator, denominator):
     print("*" * 100)
     print("we are dividing ...........")

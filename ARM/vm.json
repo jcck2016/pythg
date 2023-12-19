@@ -1,0 +1,90 @@
+"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+"contentVersion": "1.0.0.0",
+"parameters": {
+    "virtualMachines_JCWKZnode1_name": {
+        "defaultValue": "JCWKZnode1",
+        "type": "String"
+    },
+    "disks_JCWKZnode1_OsDisk_1_351e2ac7f55f43bea5461a5fe3f75e15_externalid": {
+        "defaultValue": "/subscriptions/b2aec48f-6dad-4d57-ad25-dad521fe74a4/resourceGroups/ODL-azure-1168305/providers/Microsoft.Compute/disks/JCWKZnode1_OsDisk_1_351e2ac7f55f43bea5461a5fe3f75e15",
+        "type": "String"
+    },
+    "networkInterfaces_JCWKZnode1NetInt_externalid": {
+        "defaultValue": "/subscriptions/b2aec48f-6dad-4d57-ad25-dad521fe74a4/resourceGroups/ODL-azure-1168305/providers/Microsoft.Network/networkInterfaces/JCWKZnode1NetInt",
+        "type": "String"
+    }
+},
+"variables": {},
+"resources": [
+    {
+        "type": "Microsoft.Compute/virtualMachines",
+        "apiVersion": "2023-03-01",
+        "name": "[parameters('virtualMachines_JCWKZnode1_name')]",
+        "location": "eastus",
+        "tags": {
+            "DeploymentId": "1168305",
+            "LaunchId": "21565",
+            "LaunchType": "ON_DEMAND_LAB",
+            "TemplateId": "4283",
+            "TenantId": "363"
+        },
+        "properties": {
+            "hardwareProfile": {
+                "vmSize": "Standard_D2s_v3"
+            },
+            "storageProfile": {
+                "imageReference": {
+                    "publisher": "Canonical",
+                    "offer": "0001-com-ubuntu-server-jammy",
+                    "sku": "22_04-lts-gen2",
+                    "version": "latest"
+                },
+                "osDisk": {
+                    "osType": "Linux",
+                    "name": "[concat(parameters('virtualMachines_JCWKZnode1_name'), '_OsDisk_1_351e2ac7f55f43bea5461a5fe3f75e15')]",
+                    "createOption": "FromImage",
+                    "caching": "ReadWrite",
+                    "managedDisk": {
+                        "storageAccountType": "Standard_LRS",
+                        "id": "[parameters('disks_JCWKZnode1_OsDisk_1_351e2ac7f55f43bea5461a5fe3f75e15_externalid')]"
+                    },
+                    "deleteOption": "Detach",
+                    "diskSizeGB": 30
+                },
+                "dataDisks": [],
+                "diskControllerType": "SCSI"
+            },
+            "osProfile": {
+                "computerName": "[parameters('virtualMachines_JCWKZnode1_name')]",
+                "adminUsername": "jchu",
+                "linuxConfiguration": {
+                    "disablePasswordAuthentication": false,
+                    "provisionVMAgent": true,
+                    "patchSettings": {
+                        "patchMode": "ImageDefault",
+                        "assessmentMode": "ImageDefault"
+                    },
+                    "enableVMAgentPlatformUpdates": false
+                },
+                "secrets": [],
+                "allowExtensionOperations": true,
+                "requireGuestProvisionSignal": true
+            },
+            "securityProfile": {
+                "uefiSettings": {
+                    "secureBootEnabled": true,
+                    "vTpmEnabled": true
+                },
+                "securityType": "TrustedLaunch"
+            },
+            "networkProfile": {
+                "networkInterfaces": [
+                    {
+                        "id": "[parameters('networkInterfaces_JCWKZnode1NetInt_externalid')]"
+                    }
+                ]
+            }
+        }
+    }
+]
+}
