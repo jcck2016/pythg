@@ -48,13 +48,14 @@ print("----------------------------------------------------------------------\n"
 # My dog, Elton, is making a remarkable charge up the leadboard! Remove Elton from his current position in the list and insert him at index 2.
 
 drivers.remove("Elton")
-drivers.insert(1,"Elton")
-print("This the list after the  driver 'Elton' became the 2nd place: " ,drivers)
+drivers.insert(2,"Elton")
+print("This the list after the  driver 'Elton' became the 3rd place: " ,drivers)
 print("----------------------------------------------------------------------\n")
 
 # The race is over! It's time for the podium ceremony.  Create a new list called podium that contains the first 3 elements from the drivers list. (use a slice!)
-prize_places = drivers[0:3:1]
-print("This the list of 3 finalists that would win the trophy !!: " , prize_places)
+podium = drivers[0:3:1]
+podium = drivers[:3]
+print("This the list of 3 finalists that would win the trophy !!: " , podium)
 print("----------------------------------------------------------------------\n")
 
 
@@ -67,9 +68,16 @@ print("----------------------------------------------------------------------\n"
 # 6. Esteban
 # 7. Pierre
 
-print("Here is an overall leader board and their names !! .... \n")
+'''
+print("Here is an overall leader board and their names !! .... using while loop\n")
 i = -1
 while i < len(drivers) +1:
     i += 1
     print(i+1,". ",drivers[i])
     
+'''
+
+print("Here is an overall leader board and their names !! .... using for loop\n")
+for n in range(len(drivers)):
+    print(n+1, ".", drivers[n])
+print("----------------------------------------------------------------------\n")
