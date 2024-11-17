@@ -181,5 +181,146 @@ ResourceId        : /subscriptions/a2b28c85-1948-4263-90ca-bade2bac4df4/resource
                     viders/Microsoft.Compute/disks/myVM_OsDisk_1_1ca9522d9dcc4b3b8f32b790beceaa50
 
 
+===============================================
+
+
+I’d be happy to help you get started with Git and GitHub! Here are the detailed steps:
+1. Set Up a Local Git Repository
+Install Git:
+Download and install Git from git-scm.com.
+Follow the installation instructions for your operating system.
+Configure Git:
+Open your terminal (or Git Bash on Windows) and set your username and email:
+Plain Text
+git config --global user.name "Your Name"git config --global user.email "your.email@example.com"
+
+
+Initialize a Local Repository:
+Navigate to your project directory:
+Plain Text
+cd /path/to/your/project
+
+
+Initialize the repository:
+Plain Text
+git init
+
+
+Add Files to the Repository:
+Add your project files:
+Plain Text
+git add .
+
+
+Commit the files:
+Plain Text
+git commit -m "Initial commit"
+
+
+2. Register for a GitHub Account
+Sign Up:
+Go to GitHub and click on “Sign up”.
+Follow the instructions to create your account.
+Verify Your Email:
+Check your email for a verification message from GitHub and follow the instructions to verify your email address.
+3. Create a Repository on GitHub
+Create a New Repository:
+Once logged in, click on the “+” icon in the top right corner and select “New repository”.
+Fill in the repository name, description (optional), and choose whether it will be public or private.
+Click “Create repository”.
+4. Push Your Local Repository to GitHub
+Link Your Local Repository to GitHub:
+In your terminal, add the remote repository:
+Plain Text
+git remote add origin https://github.com/your-username/your-repository.git
+
+
+Push Your Code:
+Push your local repository to GitHub:
+Plain Text
+git push -u origin master
+
+
+5. Verify Your Code on GitHub
+Check Your Repository:
+Go to your GitHub repository URL (e.g., https://github.com/your-username/your-repository).
+Verify that your code has been successfully pushed.
+
+================================
+
+PS C:\Users\Jchu2022\pythg> git add .
+PS C:\Users\Jchu2022\pythg> git commit -m "added ARM codes"
+[master 2f542a5] added ARM codes
+ 7 files changed, 1315 insertions(+), 82 deletions(-)
+ create mode 100644 ARM/login-json-deploy.txt
+ create mode 100644 ARM/test.json
+ create mode 100644 ARM/test2.json
+ create mode 100644 ARM/vm3.json
+ create mode 100644 Bicep/test.bicep
+ create mode 100644 __pycache__/azurearchad.json
+PS C:\Users\Jchu2022\pythg> git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\Jchu2022\pythg> git status
+On branch master
+Your branch is ahead of 'orgin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS C:\Users\Jchu2022\pythg> git login
+git: 'login' is not a git command. See 'git --help'.
+
+The most similar command is
+        column
+PS C:\Users\Jchu2022\pythg> git remote add origin https://github.com/jcck2016/pythg.git
+PS C:\Users\Jchu2022\pythg> git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/jcck2016/pythg.git'
+PS C:\Users\Jchu2022\pythg> git push origin master
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (11/11), 7.48 KiB | 1.25 MiB/s, done.
+Total 11 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/jcck2016/pythg.git
+   d2a0bec..2f542a5  master -> master
+PS C:\Users\Jchu2022\pythg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
