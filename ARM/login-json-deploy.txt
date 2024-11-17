@@ -1,0 +1,185 @@
+Deploying an ARM template using Azure PowerShell is straightforward. Here are the steps you need to follow:
+
+Install Azure PowerShell Module (if not already installed):
+Install-Module -Name Az -AllowClobber -Scope CurrentUser
+
+Connect to your Azure account:
+Connect-AzAccount
+
+Select the appropriate subscription (if you have multiple subscriptions):
+Select-AzSubscription -SubscriptionId "your-subscription-id"
+
+Deploy the ARM template:
+New-AzResourceGroupDeployment -ResourceGroupName "your-resource-group-name" -TemplateFile "path-to-your-template.json"
+
+Here’s a brief explanation of each step:
+
+Step 1: Installs the Azure PowerShell module if you don’t have it installed already.
+Step 2: Connects your PowerShell session to your Azure account.
+Step 3: Selects the Azure subscription you want to use for the deployment.
+Step 4: Deploys the ARM template to the specified resource group.
+Make sure to replace "your-subscription-id", "your-resource-group-name", and "path-to-your-template.json" with your actual subscription ID, resource group name, and the path to your ARM template JSON file.
+
+
+
+
+----------------------------
+
+
+PS C:\Users\Jchu2022\pythg> $cred=Get-Credential                 
+
+PowerShell credential request
+Enter your credentials.      
+User: kk_lab_user_main-166466647f7143d0@azurekmlprodkodekloud.onmicrosoft.com
+Password for user kk_lab_user_main-166466647f7143d0@azurekmlprodkodekloud.onmicrosoft.com: ****************
+
+PS C:\Users\Jchu2022\pythg> connect-azaccount -Credential $cred
+WARNING: Authentication with a username and password at the command line is strongly discouraged. Use one of the recommended authentication methods based on your requirements. For additional information, visit https://go.microsoft.com/fwlink/?linkid=2276971.
+WARNING: You may need to login again after updating "EnableLoginByWam".
+
+Subscription name Tenant
+
+Subscription name Tenant
+----------------- ------
+azurekmlprod      Default Directory
+
+
+Subscription name Tenant
+----------------- ------
+azurekmlprod      Default Directory
+
+Subscription name Tenant
+----------------- ------
+
+Subscription name Tenant
+----------------- ------
+Subscription name Tenant
+----------------- ------
+----------------- ------
+azurekmlprod      Default Directory
+
+PS C:\Users\Jchu2022\pythg> Get-AzSubscription
+
+
+
+[Survey] Help us improve Azure PowerShell by sharing your experience. This survey should take about 5 minutes. Run 'Open-AzSurveyLink' to open in browser. Learn more at https://go.microsoft.com/fwlink/?linkid=2202892
+   TenantId: 30fe8ff1-adc6-444d-ba94-1238894df42c
+
+Name         Id                                   State
+----         --                                   -----
+azurekmlprod a2b28c85-1948-4263-90ca-bade2bac4df4 Enabled
+
+PS C:\Users\Jchu2022\pythg> cd .\ARM\
+PS C:\Users\Jchu2022\pythg\ARM> dir
+
+    Directory: C:\Users\Jchu2022\pythg\ARM
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           12/7/2023  9:10 PM            806 01.storage6.json
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           12/7/2023  9:10 PM            806 01.storage6.json
+----                 -------------         ------ ----
+-a---           12/7/2023  9:10 PM            806 01.storage6.json
+-a---           12/7/2023  9:10 PM            806 01.storage6.json
+-a---           12/7/2023  9:10 PM            608 01.storage7.json
+-a---           12/7/2023  9:10 PM            608 01.storage7.json
+-a---           12/7/2023  9:10 PM            608 01.storage8.json
+-a---           12/7/2023  9:10 PM            430 01storage.ps1
+-a---          12/18/2023  9:42 PM              0 10 storage-accounts.ps1
+-a---          12/18/2023  9:42 PM          23198 newVM.json
+-a---           11/8/2024 11:10 PM            255 test.json
+-a---           12/7/2023  9:49 PM           3658 vm.json
+
+PS C:\Users\Jchu2022\pythg\ARM> Get-AzSubscription          
+
+   TenantId: 30fe8ff1-adc6-444d-ba94-1238894df42c
+
+Name         Id                                   State
+----         --                                   -----
+azurekmlprod a2b28c85-1948-4263-90ca-bade2bac4df4 Enabled
+
+PS C:\Users\Jchu2022\pythg\ARM> pwd
+
+Path
+----
+C:\Users\Jchu2022\pythg\ARM
+
+PS C:\Users\Jchu2022\pythg\ARM> Get-AzResource
+PS C:\Users\Jchu2022\pythg\ARM> Get-AzResourceGroup     
+
+ResourceGroupName : kml_rg_main-166466647f7143d0
+Location          : westus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/a2b28c85-1948-4263-90ca-bade2bac4df4/resourceGroups/kml_rg_main-166466647f7143d0
+
+PS C:\Users\Jchu2022\pythg\ARM> 
+PS C:\Users\Jchu2022\pythg\ARM> New-AzResourceGroupDeployment -Name test2 -ResourceGroupName kml_rg_main-166466647f7143d0 -TemplateParameterFile .\test2.json
+New-AzResourceGroupDeployment: Cannot retrieve the dynamic parameters for the cmdlet. One of the -TemplateFile, -TemplateUri, -TemplateSpecId or -TemplateObject parameters must be 
+supplied unless a .bicepparam file is supplied with parameter -TemplateParameterFile.
+PS C:\Users\Jchu2022\pythg\ARM> New-AzResourceGroupDeployment -Name test2 -ResourceGroupName kml_rg_main-166466647f7143d0 -TemplateFile .\test2.json
+New-AzResourceGroupDeployment: 8:39:25 PM - Error: Code=InvalidDeployment; Message=The deployment 'test2' must have either the TemplateLink or Template property set. Please see https://aka.ms/arm-module for usage details.
+New-AzResourceGroupDeployment: The deployment validation failed
+PS C:\Users\Jchu2022\pythg\ARM> New-AzResourceGroupDeployment -Name test2 -ResourceGroupName kml_rg_main-166466647f7143d0 -TemplateFile .\vm.json
+New-AzResourceGroupDeployment: Deserialized JSON type 'Newtonsoft.Json.Linq.JValue' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 9.
+PS C:\Users\Jchu2022\pythg\ARM> New-AzResourceGroupDeployment -Name test2 -ResourceGroupName kml_rg_main-166466647f7143d0 -TemplateParameterFile .\01.storage6.json
+New-AzResourceGroupDeployment: Cannot retrieve the dynamic parameters for the cmdlet. One of the -TemplateFile, -TemplateUri, -TemplateSpecId or -TemplateObject parameters must be supplied unless a .bicepparam file is supplied with parameter -TemplateParameterFile.
+PS C:\Users\Jchu2022\pythg\ARM> New-AzResourceGroupDeployment -Name test2 -ResourceGroupName kml_rg_main-166466647f7143d0 -TemplateParameterFile .\newVM.json
+New-AzResourceGroupDeployment: Cannot retrieve the dynamic parameters for the cmdlet. One of the -TemplateFile, -TemplateUri, -TemplateSpecId or -TemplateObject parameters must be supplied unless a .bicepparam file is supplied with parameter -TemplateParameterFile.
+
+
+
+PS C:\Users\Jchu2022> Get-AzResource -ResourceGroupName kml_rg_main-166466647f7143d0
+
+Name              : myVM
+ResourceGroupName : kml_rg_main-166466647f7143d0
+ResourceType      : Microsoft.Compute/virtualMachines
+Location          : westus
+ResourceId        : /subscriptions/a2b28c85-1948-4263-90ca-bade2bac4df4/resourceGroups/kml_rg_main-166466647f7143d0/pro
+                    viders/Microsoft.Compute/virtualMachines/myVM
+Tags              :
+
+Name              : myNetworkSecurityGroup
+ResourceGroupName : kml_rg_main-166466647f7143d0
+ResourceType      : Microsoft.Network/networkSecurityGroups
+Location          : westus
+ResourceId        : /subscriptions/a2b28c85-1948-4263-90ca-bade2bac4df4/resourceGroups/kml_rg_main-166466647f7143d0/pro
+                    viders/Microsoft.Network/networkSecurityGroups/myNetworkSecurityGroup
+Tags              :
+
+Name              : myPublicIP
+ResourceGroupName : kml_rg_main-166466647f7143d0
+ResourceType      : Microsoft.Network/publicIPAddresses
+Location          : westus
+ResourceId        : /subscriptions/a2b28c85-1948-4263-90ca-bade2bac4df4/resourceGroups/kml_rg_main-166466647f7143d0/pro
+                    viders/Microsoft.Network/publicIPAddresses/myPublicIP
+Tags              :
+
+Name              : myVnet
+ResourceGroupName : kml_rg_main-166466647f7143d0
+ResourceType      : Microsoft.Network/virtualNetworks
+Location          : westus
+ResourceId        : /subscriptions/a2b28c85-1948-4263-90ca-bade2bac4df4/resourceGroups/kml_rg_main-166466647f7143d0/pro
+                    viders/Microsoft.Network/virtualNetworks/myVnet
+Tags              :
+
+Name              : myNic
+ResourceGroupName : kml_rg_main-166466647f7143d0
+ResourceType      : Microsoft.Network/networkInterfaces
+Location          : westus
+ResourceId        : /subscriptions/a2b28c85-1948-4263-90ca-bade2bac4df4/resourceGroups/kml_rg_main-166466647f7143d0/pro
+                    viders/Microsoft.Network/networkInterfaces/myNic
+Tags              :
+
+Name              : myVM_OsDisk_1_1ca9522d9dcc4b3b8f32b790beceaa50
+ResourceGroupName : KML_RG_MAIN-166466647F7143D0
+ResourceType      : Microsoft.Compute/disks
+Location          : westus
+ResourceId        : /subscriptions/a2b28c85-1948-4263-90ca-bade2bac4df4/resourceGroups/KML_RG_MAIN-166466647F7143D0/pro
+                    viders/Microsoft.Compute/disks/myVM_OsDisk_1_1ca9522d9dcc4b3b8f32b790beceaa50
+
+
+
+
