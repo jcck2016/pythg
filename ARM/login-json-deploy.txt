@@ -292,11 +292,48 @@ To https://github.com/jcck2016/pythg.git
 PS C:\Users\Jchu2022\pythg>
 
 
+===================================
 
 
+Deploying Azure resources using Bicep in Azure PowerShell is a straightforward process. Here are the steps you need to follow:
+
+Install Azure PowerShell Module (if not already installed):
+Install-Module -Name Az -AllowClobber -Scope CurrentUser
+
+Install Bicep CLI (if not already installed):
+az bicep install
+
+Connect to your Azure account:
+Connect-AzAccount
+
+Select the appropriate subscription (if you have multiple subscriptions):
+Select-AzSubscription -SubscriptionId "your-subscription-id"
+
+Deploy the Bicep template:
+New-AzResourceGroupDeployment -ResourceGroupName "your-resource-group-name" -TemplateFile "path-to-your-template.bicep"
+
+Here’s a brief explanation of each step:
+
+Step 1: Installs the Azure PowerShell module if you don’t have it installed already.
+Step 2: Installs the Bicep CLI, which is necessary to work with Bicep files.
+Step 3: Connects your PowerShell session to your Azure account.
+Step 4: Selects the Azure subscription you want to use for the deployment.
+Step 5: Deploys the Bicep template to the specified resource group.
+Make sure to replace "your-subscription-id", "your-resource-group-name", and "path-to-your-template.bicep" with your actual subscription ID, resource group name, and the path to your Bicep template file.
 
 
+==================
 
+
+New-AzResourceGroupDeployment: 11:33:04 PM - Error: Code=AuthorizationFailed; Message=The client 'kk_lab_user_main-7ae31ecb700a4a25@azurekmlprodkodekloud.onmicrosoft.com' with object id '4c7239ab-78c1-412f-8cb1-37d8cd25e38d' does not have authorization to perform action 'Microsoft.Resources/deployments/validate/action' over scope '/subscriptions/a2b28c85-1948-4263-90ca-bade2bac4df4/resourcegroups/kml_rg_main-166466647f7143d0/providers/Microsoft.Resources/deployments/test255' or the scope is invalid. If access was recently granted, please refresh your credentials.
+New-AzResourceGroupDeployment: The deployment validation failed
+PS C:\Users\Jchu2022\pythg\Bicep> new-AzResourceGroupDeployment -Name test255 -ResourceGroupName kml_rg_main-166466647f7143d0 -TemplateFile .\vm3-rg.bicepkml_rg_main-7ae31ecb700a4a25
+>> ^C
+PS C:\Users\Jchu2022\pythg\Bicep> new-AzResourceGroupDeployment -Name test255 -ResourceGroupName kml_rg_main-7ae31ecb700a4a25
+New-AzResourceGroupDeployment: Cannot retrieve the dynamic parameters for the cmdlet. One of the -TemplateFile, -TemplateUri, -TemplateSpecId or -TemplateObject parameters must be supplied unless a 
+.bicepparam file is supplied with parameter -TemplateParameterFile.
+PS C:\Users\Jchu2022\pythg\Bicep> new-AzResourceGroupDeployment -Name test255 -ResourceGroupName kml_rg_main-7ae31ecb700a4a25 -TemplateFile .\vm3-rg.bicep
+WARNING: C:\Users\Jchu2022\pythg\Bicep\vm3-rg.bicep(6,28) : Warning secure-parameter-default: Secure parameters should not have hardcoded defaults (except for empty or newGuid()). [https://aka.ms/bicep/linter/secure-parameter-default]
 
 
 
