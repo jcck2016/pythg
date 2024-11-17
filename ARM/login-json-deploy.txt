@@ -334,7 +334,33 @@ New-AzResourceGroupDeployment: Cannot retrieve the dynamic parameters for the cm
 .bicepparam file is supplied with parameter -TemplateParameterFile.
 PS C:\Users\Jchu2022\pythg\Bicep> new-AzResourceGroupDeployment -Name test255 -ResourceGroupName kml_rg_main-7ae31ecb700a4a25 -TemplateFile .\vm3-rg.bicep
 WARNING: C:\Users\Jchu2022\pythg\Bicep\vm3-rg.bicep(6,28) : Warning secure-parameter-default: Secure parameters should not have hardcoded defaults (except for empty or newGuid()). [https://aka.ms/bicep/linter/secure-parameter-default]
+PS C:\Users\Jchu2022\pythg\Bicep> new-AzResourceGroupDeployment -Name test255 -ResourceGroupName kml_rg_main-7ae31ecb700a4a25 -TemplateFile .\vm3-rg.bicep
+WARNING: C:\Users\Jchu2022\pythg\Bicep\vm3-rg.bicep(6,28) : Warning secure-parameter-default: Secure parameters should not have hardcoded defaults (except for empty or newGuid()). [https://aka.ms/bicep/linter/secure-parameter-default]
 
+
+
+DeploymentName          : test255
+ResourceGroupName       : kml_rg_main-7ae31ecb700a4a25
+ProvisioningState       : Succeeded
+Timestamp               : 11/17/2024 7:36:39 AM
+Mode                    : Incremental
+TemplateLink            :
+Parameters              :
+                          Name             Type                       Value
+                          ===============  =========================  ==========
+                          adminUsername    String                     "azureuser"
+                          adminPassword    SecureString               null
+                          location         String                     "westus"
+                          nsgName          String                     "myNetworkSecurityGroup"
+                          vnetName         String                     "myVnet"
+                          subnetName       String                     "mySubnet"
+                          addressPrefix    String                     "10.0.0.0/16"
+                          subnetPrefix     String                     "10.0.0.0/24"
+
+Outputs                 :
+DeploymentDebugLogLevel :
+
+PS C:\Users\Jchu2022\pythg\Bicep>
 
 
 
