@@ -1,0 +1,14 @@
+
+VectorUSA_NOC
+DC_Access
+Server Access
+Domain Admins
+Information Technology Users
+Enterprise Admins
+Local Server Admins
+DHCP Administrators
+VPN Access
+SAN_Admin
+All Waev Contractors
+VUSA_Network
+WV_WIRELESS

@@ -1,0 +1,5 @@
+can you write a PowerShell script that does the following 
+1. take in parameter of a network subnet block in CIDR format 
+2. ping or test connect all the devices connected to this network and resolve each of their DNS name and ip addresses
+3. obtain mac addresses and manufacture information from each device 
+4. export the data into a csv file named scanresult.csv

@@ -1,0 +1,217 @@
+ssh cloud_user@44.193.204.6         .... mem   ... rename ... DHCP
+XKYJ2175uelo
+
+
+
+there's 2 account for SYSD, one for VPN, one for the servers in their domain.
+For VPN Access (sysd.k12.ca.us domain)
+jchu
+TH1$_on3_4_vpn
+For Server Access (sysdschools.org domain)
+jchu@sysdschools.org
+Pl3@$3_Ch@ng3
+
+
+
+cloud servers
+
+DC1
+Credential
+Username
+cloud_user
+Temporary Password
+OROH4414ftlv
+IP Address
+Public IPv4
+44.198.58.247
+Private IPv4
+172.31.27.19
+IPv6
+T20240824.0011 - INC7170549-LSA -Multiple Device-Down
+ T20240824.0011 - INC7170549-LSA -Multiple Device-Down
+ 
+
+
+DC2
+Username
+cloud_user
+Temporary Password
+LQEK4144wntu
+IP Address
+Public IPv4
+54.174.145.165
+Private IPv4
+172.31.22.245
+IPv6
+
+
+member
+Credential
+Username
+cloud_user
+Temporary Password
+WXWN3615ueql
+IP Address
+Public IPv4
+44.205.11.52
+Private IPv4
+
+
+
+
+
+
+   #filesys clean start
+   #filesys clean status    to check progress of the cleaning operation
+
+
+
+
+Question #25Topic 1
+SIMULATION
+You need to create a user named Admin1 in contoso.com. Admin1 must be able to back up and restore files on SRV1. The solution must use principle of the least privilege.
+To complete this task, sign in the required computer or computers.
+https://www.exam-answer.com/admin1-backup-restore-files-srv1-contoso
+
+
+
+GPO ??
+Question #26Topic 1
+SIMULATION
+You need to ensure that the minimum password length for members of the BranchAdmins group is 12 characters. The solution must affect only the BranchAdmins group.
+To complete this task, sign in the required computer or computers.
+
+
+Question #27Topic 1
+SIMULATION
+You need to configure a Group Policy preference to ensure that users in the organizational unit (OU) named Server Admins have a shortcut to a folder named \\srv1.contoso.com\data on their desktop when they sign in to the computers in the domain.
+To complete this task, sign in the required computer or computers.
+
+Question #28Topic 1
+SIMULATION
+You plan to promote a domain controller named DC3 in a site in Seattle.
+You need to ensure that DC3 only replicates with DC1 and DC2 between 8 PM and 6 AM.
+To complete this task, sign in the required computer or computers.
+
+Question #29Topic 1
+SIMULATION
+You need to ensure that DC2 is the schema master for contoso.com.
+To complete this task, sign in the required computer or computers.
+
+Question #56Topic 1
+SIMULATION
+You need to create a group-managed service account (gMSA) named gMSA1 and make gMSA1 available on SRV1.
+To complete this task, sign in to the required computer or computers.
+
+Question #57Topic 1
+SIMULATION
+You use a Group Policy preference to map \\dc1.contoso.com\install as drive H for all users. If a user already has an existing drive mapping for H, the new drive mapping must take precedence.
+To complete this task, sign in to the required computer or computers.
+
+
+Question #13Topic 2
+SIMULATION
+You need to collect errors from the System event log of SRV1 to a Log Analytics workspace.
+The required source files are located in a folder named \\dc1.contoso.com\install.
+To complete this task, sign in the required computer or computers.
+
+Question #22Topic 2
+SIMULATION
+You need to collect the recommended Windows Performance Counters from SRV1 in a Log Analytics workspace.
+The required files are stored in a shared folder named \\dc1\install.
+To complete this task, sign in to the required computer or computers.
+
+
+Question #24Topic 2
+SIMULATION
+You need to ensure that you can manage DC1 by using Windows Admin Center on SRV1.
+The required source files are located in a folder named \\dc1.contoso.com\install.
+To complete this task, sign in the required computer or computers.
+
+
+Question #25Topic 2
+SIMULATION
+You need to monitor the security configuration of DC1 by using Microsoft Defender for Cloud.
+The required source files are located in a folder named \\dc1.contoso.com\install.
+To complete this task, sign in the required computer or computers.
+
+Question #26Topic 2
+SIMULATION
+You plan to create group managed service accounts (gMSAs).
+You need to configure the domain to support the creation of gMSAs.
+To complete this task, sign in the required computer or computers.
+
+Question #17Topic 3
+SIMULATION
+You need to enable nested virtualization for a virtual machine named VM1 on SRV1.
+To complete this task, sign in the required computer or computers.
+
+Question #18Topic 3
+SIMULATION
+SRV1 contains a virtual machine named VM1.
+You need attach c:\vhds\Disk1.vhdx to VM1. The solution must ensure that Disk1 can be expanded dynamically when VM1 runs.
+To complete this task, sign in the required computer or computers.
+
+
+Question #32Topic 3
+SIMULATION
+You need to run a container that uses the mcr.microsoft.com/windows/servercore/iis image on SRV1. Port 80 on the container must be published to port 5001 on SRV1 and the container must run in the background.
+To complete this task, sign in to the required computer or computers.
+
+Question #33Topic 3
+SIMULATION
+You have an application that is copied to a folder named C:\app on SRV1. C:\app also contains a Dockerfile for the app.
+On SRV1, you need to create a container image for the application by using the Dockerfile. The container image must be named app1.
+To complete this task, sign in to the required computer or computers.
+
+Question #37Topic 3
+SIMULATION
+You need to configure Hyper-V to ensure that running virtual machines can be moved between SRV1 and SRV2 without downtime.
+You do NOT need to move any virtual machines at this time.
+To complete this task, sign in the required computer or computers.
+
+Question #16Topic 4
+SIMULATION
+You need to replicate a read-only copy of a DNS zone named contoso.com D to SRV2.
+To complete this task, sign in the required computer or computers.
+
+Question #17Topic 4
+SIMULATION
+You plan to delegate the management of a DNS zone named fabrikam.com located on DC1 to the BranchAdmins group.
+You need to ensure that you can grant permissions to the fabikam.com zone.
+To complete this task, sign in the required computer or computers.
+
+Question #18Topic 4
+SIMULATION
+You need to ensure that SRV1 only leases IP addresses from the range of 192.168.1.190 to 192.168.1.200 to computers that have a MAC address that starts with aabb.
+To complete this task, sign in the required computer or computers.
+
+• Question #20Topic 4
+• SIMULATION -
+You need to ensure that all the computers in the domain use DNSSEC to resolve names in the adatum.com zone.
+To complete this task, sign in to the required computer or computers.
+
+Question #32Topic 4
+SIMULATION
+You need to ensure that you can manage SRV1 remotely by using PowerShell.
+To complete this task, sign in to the required computer or computers.
+
+Question #33Topic 4
+SIMULATION
+You need to deploy a new primary DNS zone named fabrikam.com to DC1. The zone must be signed.
+To complete this task, sign in to the required computer or computers.
+
+question #39Topic 4
+SIMULATION
+You need to create an Active Directory Domain Services (AD DS) site named Site2 that is associated to an IP address range of 192.168.2.0 to 192.168.2.255.
+To complete this task, sign in the required computer or computers.
+
+Question #40Topic 4
+SIMULATION
+You need to configure SRV1 as a DNS server. SRV1 must be able resolve names from the contoso.com domain by using DC1. All other names must be resolved by using the root hint servers.
+To complete this task, sign in the required computer or computers.
+
+Question #41Topic 4
+SIMULATION
+You need to ensure that a DHCP scope named scope1 on SRV1 can service client requests.
+To complete this task, sign in the required computer or computers.
